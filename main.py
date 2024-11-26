@@ -7,7 +7,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
+from fastapi import FastAPI
 
 # %%
 df = pd.read_csv('Data/co-emissions-per-capita new.csv')
