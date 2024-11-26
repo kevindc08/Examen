@@ -17,6 +17,9 @@ def index():
     return{"message":"Bienvenido"}
 
 # %%
+index()
+
+# %%
 @app.get("/data")
 def data():
     pais = list(df['Entity'].unique())
@@ -54,10 +57,10 @@ def year(year: int):
     data = df[df['Year'] == year].sort_values(ascending=False, by='Entity')
     dic = {}
     for i in range(len(data)):
-        dic[int(data['Entity'].iloc[i])] = float(data['Annual CO₂ emissions (per capita)'].iloc[i])
+        dic[data['Entity'].iloc[i]] = float(data['Annual CO₂ emissions (per capita)'].iloc[i])
     return {country:dic}
 
 # %%
-year(2023)
+year(1990)
 
 
